@@ -2,14 +2,15 @@
 #include <stdlib.h>
 
 #include "run.h"
+#include "logger.h"
 
 int main() {
     int result = runVulkan();
 
 	if (result == 0) {
-		printf("[LOG] Execution finished gracefully!\n");
+		logmsg("Execution finished gracefully!");
 		return 0;
 	}
-	printf("[ERR] Execution failed!\n");
+	logerr("Execution failed!");
 	return 1;
 }
